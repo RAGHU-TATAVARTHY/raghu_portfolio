@@ -13,7 +13,7 @@ const projectImageStyle = document.createElement('style');
 
 projectImageStyle.textContent = `
 .project-visual.brain{
-    background-image:url("alzheimers.jpg");
+    background-image:url("alzheimers.png");
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;

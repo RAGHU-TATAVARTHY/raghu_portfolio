@@ -15,7 +15,7 @@ projectImageStyle.textContent = `
 .project-visual.brain{
     background-image:url("alzheimers.png");
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size:80%;
     background-position:center;
 }
 

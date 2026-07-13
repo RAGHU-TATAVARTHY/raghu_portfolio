@@ -10,10 +10,56 @@ const projectDetails=[
 ];
 document.querySelectorAll('.project-info').forEach((info,index)=>{const data=projectDetails[index];if(!data)return;info.querySelector('p').textContent=data.body;const tags=document.createElement('div');tags.className='project-tags';tags.innerHTML=data.tags.map(tag=>`<span>${tag}</span>`).join('');info.appendChild(tags)});
 const projectImageStyle=document.createElement('style');projectImageStyle.textContent=`
-  .project-visual.brain,.project-visual.research,.project-visual.car{background-image:url("file:///C:/Users/raghu/AppData/Local/Temp/codex-clipboard-f571fc46-6b52-46b2-a099-7b82b8788734.png");background-repeat:no-repeat;background-size:1687px 624px}
-  .project-visual.brain{background-position:-61px -179px}.project-visual.research{background-position:-571px -179px}.project-visual.car{background-position:-1080px -179px}.project-visual.brain b,.project-visual.car b{display:none}
-  .project-info p{color:#e5e9f0;font-size:.86rem;line-height:1.62}.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.project-tags span{border:1px solid #354155;border-radius:17px;padding:3px 12px;color:#dce6ef;font:.64rem var(--mono);background:#171e2c}
-  @media(max-width:760px){.project-visual.brain,.project-visual.research,.project-visual.car{background-size:auto 210px;background-position:center}.project-info p{font-size:.8rem}}
+  .project-visual.brain{
+    background-image:url("alzheimers.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.project-visual.research{
+    background-image:url("parkinson.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.project-visual.car{
+    background-image:url("car rental.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.project-visual.brain b,
+.project-visual.car b{
+    display:none;
+}
+
+.project-info p{
+    color:#e5e9f0;
+    font-size:.86rem;
+    line-height:1.62;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:25px;
+}
+
+.project-tags span{
+    border:1px solid #354155;
+    border-radius:17px;
+    padding:3px 12px;
+    color:#dce6ef;
+    font:.64rem var(--mono);
+    background:#171e2c;
+}
+`;
+
+document.head.appendChild(projectImageStyle);
 `;document.head.appendChild(projectImageStyle);
 document.querySelectorAll('.project-visual > span').forEach(label=>label.remove());
 const recognition=document.querySelector('#publications');

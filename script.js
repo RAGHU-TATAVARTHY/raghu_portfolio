@@ -9,12 +9,72 @@ const projectDetails=[
   {body:'Full-stack web app for car booking, availability lookup and inventory management. Built with a secure authentication layer, MySQL-backed transactional booking flow, and a fully responsive, mobile-first UI.',tags:['HTML','CSS','JavaScript','PHP','MySQL']}
 ];
 document.querySelectorAll('.project-info').forEach((info,index)=>{const data=projectDetails[index];if(!data)return;info.querySelector('p').textContent=data.body;const tags=document.createElement('div');tags.className='project-tags';tags.innerHTML=data.tags.map(tag=>`<span>${tag}</span>`).join('');info.appendChild(tags)});
-const projectImageStyle=document.createElement('style');projectImageStyle.textContent=`
-  .project-visual.brain,.project-visual.research,.project-visual.car{background-image:url("file:///C:/Users/raghu/AppData/Local/Temp/codex-clipboard-f571fc46-6b52-46b2-a099-7b82b8788734.png");background-repeat:no-repeat;background-size:1687px 624px}
-  .project-visual.brain{background-position:-61px -179px}.project-visual.research{background-position:-571px -179px}.project-visual.car{background-position:-1080px -179px}.project-visual.brain b,.project-visual.car b{display:none}
-  .project-info p{color:#e5e9f0;font-size:.86rem;line-height:1.62}.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.project-tags span{border:1px solid #354155;border-radius:17px;padding:3px 12px;color:#dce6ef;font:.64rem var(--mono);background:#171e2c}
-  @media(max-width:760px){.project-visual.brain,.project-visual.research,.project-visual.car{background-size:auto 210px;background-position:center}.project-info p{font-size:.8rem}}
-`;document.head.appendChild(projectImageStyle);
+const projectImageStyle = document.createElement('style');
+
+projectImageStyle.textContent = `
+.project-visual.brain{
+    background-image:url("alzheimers.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.project-visual.research{
+    background-image:url("parkinson.jpeg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.project-visual.car{
+    background-image:url("carrental.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.project-visual.brain b,
+.project-visual.car b{
+    display:none;
+}
+
+.project-info p{
+    color:#e5e9f0;
+    font-size:.86rem;
+    line-height:1.62;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:25px;
+}
+
+.project-tags span{
+    border:1px solid #354155;
+    border-radius:17px;
+    padding:3px 12px;
+    color:#dce6ef;
+    font:.64rem var(--mono);
+    background:#171e2c;
+}
+
+@media(max-width:760px){
+    .project-visual.brain,
+    .project-visual.research,
+    .project-visual.car{
+        background-size:cover;
+        background-position:center;
+    }
+
+    .project-info p{
+        font-size:.8rem;
+    }
+}
+`;
+
+document.head.appendChild(projectImageStyle);
 document.querySelectorAll('.project-visual > span').forEach(label=>label.remove());
 const recognition=document.querySelector('#publications');
 if(recognition)recognition.innerHTML=`<div class="recognition-reference"><p class="about-kicker">/ 04 · PUBLICATIONS · CERTIFICATIONS · WINS</p><h2>Recognition<span>.</span></h2><div class="recognition-grid"><article><div class="recognition-title"><b>▭</b><h3>Publications</h3></div><div class="recognition-item paper"><strong>PARK-LDNet: A Hybrid LSTM-DBN Framework for Parkinson’s Disease Prediction</strong><p>IEEE International Conference on Contemporary Computing and Communications (ICCCC), 2025</p><a href="#">View paper ↗</a></div></article><article><div class="recognition-title"><b>♙</b><h3>Certifications</h3></div><div class="recognition-item"><strong>AWS Machine Learning Foundations</strong><p>Amazon Web Services</p><i></i></div><div class="recognition-item"><strong>IBM Web Development</strong><p>IBM</p><i></i></div><div class="recognition-item"><strong>Databricks Data Engineer Associate</strong><p>Databricks</p><i></i></div></article><article><div class="recognition-title"><b>♜</b><h3>Hackathons</h3></div><div class="recognition-item"><strong>Semi-Finalist — Tech-Hacks</strong><p>BVRIT, Telangana · Hackathon</p></div><div class="recognition-item"><strong>Participant — The Blue Bit Hackathon 2.0</strong><p>PCCOE, Maharashtra · Hackathon</p></div></article></div></div>`;
